@@ -1,0 +1,186 @@
+# This file is used for Git repositories to specify intentionally untracked files that Git should ignore. 
+# If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
+# For useful gitignore templates see: https://github.com/github/gitignore
+
+# Salesforce cache
+.sfdx/
+.localdevserver/
+.vscode
+manifest/
+mdapipkg/
+
+# Custom directories
+delta/
+
+# Vlocity files and directories
+vlocity-temp/
+VlocityBuildErrors.log
+VlocityBuildLog.yaml
+
+# Vlocity datapacks to exclude - came preinstalled
+## DataRaptors
+vlocity/DataRaptor/AccountSearch*
+vlocity/DataRaptor/CreateContactInteraction*
+vlocity/DataRaptor/CreateContract*
+vlocity/DataRaptor/CreateDiscounts*
+vlocity/DataRaptor/CreateInteraction*
+vlocity/DataRaptor/CreateParent*
+vlocity/DataRaptor/CreateSubContract*
+vlocity/DataRaptor/CreateSubContract*
+vlocity/DataRaptor/CPQ-*
+vlocity/DataRaptor/ExtractAccount*
+vlocity/DataRaptor/ExtractAsset*
+vlocity/DataRaptor/ExtractContract*
+vlocity/DataRaptor/ExtractGroupQuote*
+vlocity/DataRaptor/DocGenSample-*
+vlocity/DataRaptor/GenericDocuSign*
+vlocity/DataRaptor/GetDiscounts*
+vlocity/DataRaptor/GetSubContracts*
+vlocity/DataRaptor/GuestUser-*
+vlocity/DataRaptor/MultiService-*
+vlocity/DataRaptor/QueryContract*
+vlocity/DataRaptor/QueryParent*
+vlocity/DataRaptor/QuerySubQuotes*
+vlocity/DataRaptor/VPL-*
+vlocity/DataRaptor/sample*
+vlocity/DataRaptor/team*
+vlocity/DataRaptor/TransformData*
+vlocity/DataRaptor/TransformNewInt*
+vlocity/DataRaptor/UpdateParentContract*
+vlocity/DataRaptor/UpdateSubCon*
+vlocity/DataRaptor/WorkItem*
+
+
+## Integration Procedures
+vlocity/IntegrationProcedure/clm_*
+vlocity/IntegrationProcedure/CPQ_*
+vlocity/IntegrationProcedure/CustomerInteraction*
+vlocity/IntegrationProcedure/MultiService_*
+vlocity/IntegrationProcedure/VPL_*
+vlocity/IntegrationProcedure/sample_*
+vlocity/IntegrationProcedure/team_*
+vlocity/IntegrationProcedure/Interaction_*
+
+## OmniScripts
+vlocity/OmniScript/clm_*
+vlocity/OmniScript/CPQ_*
+vlocity/OmniScript/docGeneration*
+vlocity/OmniScript/genericDocuSign*
+vlocity/OmniScript/InteractionLaunch*
+vlocity/OmniScript/MACD_*
+vlocity/OmniScript/ThorManual*
+vlocity/OmniScript/XOM_*
+vlocity/OmniScript/MultiService_*
+
+## VlocityAction
+vlocity/VlocityAction/Add-Customer-*
+vlocity/VlocityAction/Amend*
+vlocity/VlocityAction/Apply-To*
+vlocity/VlocityAction/Assisted-Pay*
+vlocity/VlocityAction/B2B-*
+vlocity/VlocityAction/B2C-*
+vlocity/VlocityAction/Mobile-Action*
+vlocity/VlocityAction/Mobile-Order*
+vlocity/VlocityAction/RET_*
+vlocity/VlocityAction/XOM*
+vlocity/VlocityAction/Support-*
+vlocity/VlocityAction/MultiService*
+vlocity/VlocityAction/Marketing-Library*
+
+## VlocityCard
+vlocity/VlocityCard/acuity-*
+vlocity/VlocityCard/Campaign-*
+vlocity/VlocityCard/Case-Story*
+vlocity/VlocityCard/Claim-Story*
+vlocity/VlocityCard/clm-*
+vlocity/VlocityCard/Community-*
+vlocity/VlocityCard/comp-assets*
+vlocity/VlocityCard/comp-cart*
+vlocity/VlocityCard/Contact*
+vlocity/VlocityCard/cpq-*
+vlocity/VlocityCard/Customer-Interaction-*
+vlocity/VlocityCard/Interaction-*
+vlocity/VlocityCard/mobile-ret-*
+vlocity/VlocityCard/multiservice-cpq-*
+vlocity/VlocityCard/Non-Held-*
+vlocity/VlocityCard/Event-Story*
+vlocity/VlocityCard/Held-*
+vlocity/VlocityCard/Note-Story*
+vlocity/VlocityCard/Opportunity-Story*
+vlocity/VlocityCard/Order-Story*
+vlocity/VlocityCard/Policy-Story*
+vlocity/VlocityCard/profile-account*
+vlocity/VlocityCard/Saved-OmniScript*
+vlocity/VlocityCard/Task-Story*
+vlocity/VlocityCard/vloc-mob*
+vlocity/VlocityCard/vloc-mob*
+vlocity/VlocityCard/vlocity-interaction-*
+vlocity/VlocityCard/xom-*
+
+## VlocityScheduledJob
+vlocity/VlocityScheduledJob/DeleteAllContractLineItems
+vlocity/VlocityScheduledJob/UpdateAllParentContractLineItems
+vlocity/VlocityScheduledJob/UpdateAllSubContracts
+
+## VlocityUILayout
+vlocity/VlocityUILayout/campaign-*
+vlocity/VlocityUILayout/clm-*
+vlocity/VlocityUILayout/community-*
+vlocity/VlocityUILayout/comp-assets-*
+vlocity/VlocityUILayout/comp-cart-*
+vlocity/VlocityUILayout/console-*
+vlocity/VlocityUILayout/cpq-*
+vlocity/VlocityUILayout/interaction-*
+vlocity/VlocityUILayout/mobile-*
+vlocity/VlocityUILayout/multiservice-*
+vlocity/VlocityUILayout/vloc-*
+vlocity/VlocityUILayout/vlocity-*
+vlocity/VlocityUILayout/xom-*
+
+## VlcoityUITemplate
+vlocity/VlocityUITemplate/action-grid-*
+vlocity/VlocityUITemplate/acuity-*
+vlocity/VlocityUITemplate/aura-lwc-*
+vlocity/VlocityUITemplate/campaign-*
+vlocity/VlocityUITemplate/clm-*
+vlocity/VlocityUITemplate/community-*
+vlocity/VlocityUITemplate/comp-assets-*
+vlocity/VlocityUITemplate/comp-cart-*
+vlocity/VlocityUITemplate/cpq-*
+vlocity/VlocityUITemplate/docgensample-*
+vlocity/VlocityUITemplate/mobile-*
+vlocity/VlocityUITemplate/multiservice-*
+vlocity/VlocityUITemplate/object-document-*
+vlocity/VlocityUITemplate/omniLightning-*
+vlocity/VlocityUITemplate/omniNewport-*
+vlocity/VlocityUITemplate/vloc-*
+vlocity/VlocityUITemplate/vlocity-*
+vlocity/VlocityUITemplate/xom-*
+
+# LWC VSCode autocomplete
+**/lwc/jsconfig.json
+
+# LWC Jest coverage reports
+coverage/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Eslint cache
+.eslintcache
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/

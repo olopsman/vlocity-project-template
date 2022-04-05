@@ -1,0 +1,36 @@
+# custom docker image based on bitbucket image
+image: olopsman/bitbucket-vlocity
+
+pipelines:
+  pull-requests:
+    'feature/*': # Pull request from feature branch to org      
+      - step:
+          name: "PR Validate Vlocity Package"
+          script:
+            - echo "Vlocity Validation"
+            - echo $AUTH_URL >> /tmp/sfdx_auth.txt
+            - sfdx force:auth:sfdxurl:store -f /tmp/sfdx_auth.txt -s -a dxpipeline
+            - vlocity -sfdx.username $USER -job vlocity-package.yaml cleanOrgData # cleans the orb before deploy. 
+            - vlocity -sfdx.username $USER -job vlocity-package.yaml validateLocalData # validate package is valid. 
+          condition:
+            changesets:
+              includePaths:
+                # only if we have changes in the vlocity package
+                - "vlocity-app/**"                                
+## MERGE Branch Triggers ##            
+  branches:
+    master: # On push/merge deploy to Org    
+      - step:
+          name: "Deploy Vlocity To Org"
+          script:
+            - echo "Deploying to Org"
+            - echo $AUTH_URL >> /tmp/sfdx_auth.txt
+            - sfdx force:auth:sfdxurl:store -f /tmp/sfdx_auth.txt -s -a dxpipeline
+            - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+            - git fetch --all 
+            - if [ $DEPLOY_VLC_DELTA == "TRUE" ]; then            
+            - vlocity-delta qa origin/release vlocity-app # create delta folder
+            - awk '{sub("vlocity-app","delta-vlocity-app")}1' vlocity-package.yaml > vlocity-tmp.yaml && mv vlocity-tmp.yaml vlocity-package.yaml  # change the project root to delta            
+            - fi
+            - vlocity -sfdx.username $USER -job vlocity-package.yaml packUpdateSettings # cleans the org before deploy. 
+            - vlocity -sfdx.username $USER -job vlocity-package.yaml packDeploy # validate package is valid.                  
